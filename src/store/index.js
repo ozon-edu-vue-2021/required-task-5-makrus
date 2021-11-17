@@ -6,9 +6,19 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    goods: []
+    goods: [],
+    cart: [],
   },
-  mutations: {},
+  getters: {
+    getTotalCost(state) {
+      return state.cart.reduce((sum, current) => sum + current.price, 0);
+    },
+  },
+  mutations: {
+      addGoods(state, good) {
+         state.cart.push(good);
+      }
+  },
   actions: {
     getGoods() {
       axios

@@ -7,6 +7,8 @@
 <script>
 import Card from "@/components/Card";
 
+const images = ['6123150777.webp', '6126039472.webp', '6126040354.webp', '6128597660.webp', '6134992334.webp', '6136170572.webp', '6136172483.webp', '6140906765.webp', '6142673815.webp', '6142681673.webp', '6142683276.webp', '6148226736.webp']
+
 export default {
   name: "App",
   components: {
@@ -17,7 +19,8 @@ export default {
       goods() {
         return this.$store.state.goods.map(item => {
            item.price = Math.random() * 290 + 10;
-           item.img = "../assets/images/6123150777.webp";
+           let img = images[Math.floor(Math.random() * 12)];
+           item.img = require(`./assets/images/${img}`);
            return item;
         });
       }
