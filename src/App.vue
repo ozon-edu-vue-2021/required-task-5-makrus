@@ -1,16 +1,20 @@
 <template>
   <div id="app">
+      <nav>
+        <router-link to="/">Витрина</router-link> |
+        <router-link to="/cart">Корзина</router-link>
+      </nav>
+      <router-view />
   </div>
 </template>
 
 <script>
-
-export default {
-  name: "App",
-  components: {
-    Form,
-  },
-};
+    export default {
+      name: "App",
+      components: {
+        // Form,
+      },
+    };
 </script>
 
 <style>
@@ -30,5 +34,9 @@ body,
 
 * {
   box-sizing: border-box;
+}
+
+nav {
+    margin-bottom: 1rem;
 }
 </style>
