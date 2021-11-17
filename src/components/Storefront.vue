@@ -3,7 +3,7 @@
       <div v-for="item in goods" :key="item.id" class="card">
         <img :src="item.img" />
         <h3 class="item-title">{{ item.dish }}</h3>
-        <div class="price">{{ item.price }}</div>
+        <div class="price">{{ item.price.toFixed(2) }}</div>
         <button
             type="button"
             class="button-tocart"
